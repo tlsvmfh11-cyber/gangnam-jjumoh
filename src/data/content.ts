@@ -5,8 +5,8 @@ export const siteMetadata = {
   title: '강남 쩜오 완벽 가이드 - 시스템부터 가격까지 투명 공개',
   description: '강남역 도보 3분, 최고급 쩜오 이용 완벽 가이드. 초이스 시스템, 가격 구조, 예약 방법부터 비즈니스 접대 노하우까지 15,000자 초대용량 정보. 실시간 예약 가능, 프리미엄 서비스 보장.',
   keywords: '강남 쩜오, 강남역 쩜오, 신논현 쩜오, 강남 룸살롱, 강남 고급 유흥, 강남 접대 장소',
-  ogImage: '/images/og-gangnam-jjumoh.webp',
-  url: 'https://example.com/gangnam-jjumoh',
+  ogImage: 'https://gangnam-jjumoh-guide.com/images/room-1.webp',
+  url: 'https://gangnam-jjumoh-guide.com',
 };
 
 export const hero = {
