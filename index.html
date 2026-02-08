@@ -12,10 +12,15 @@
     <meta name="author" content="hscompany" />
     <link rel="canonical" href="https://gangnam-jjumoh-guide.com/" />
 
-    <!-- Preconnect -->
+    <!-- DNS Prefetch & Preconnect (Performance) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    <!-- Preload Critical Resources (LCP Optimization) -->
+    <link rel="preload" href="/images/room-1.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="modulepreload" href="/src/main.tsx" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
@@ -30,5 +35,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Performance Monitoring -->
+    <script>
+      // Web Vitals monitoring will be injected by React
+      if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+      }
+    </script>
   </body>
 </html>

@@ -48,12 +48,14 @@ export const Section = ({ section, index }: SectionProps) => {
             {/* 그라데이션 오버레이 */}
             <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent z-10 pointer-events-none"></div>
 
-            {/* 이미지 */}
+            {/* 이미지 - 첫 번째 이미지는 LCP 최적화 */}
             <img
               src={`/images/room-${(index % 10) + 1}.webp`}
               alt={`강남 쩜오 ${section.title} - 프리미엄 인테리어`}
               className="w-full h-auto min-h-[300px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] object-cover transition-transform duration-700 hover:scale-105"
-              loading="lazy"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : 'auto'}
+              decoding="async"
               draggable="false"
               width="1200"
               height="800"
