@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { faqData } from '../data/content';
+import { parseContentWithLinks } from '../utils/parseContent';
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -83,7 +84,7 @@ export const FAQ = () => {
                   >
                     <div className="px-6 py-5 bg-[#1f1f1f] border-t border-secondary/10">
                       <p className="text-lg text-accent leading-relaxed">
-                        {faq.answer}
+                        {parseContentWithLinks(faq.answer)}
                       </p>
                     </div>
                   </motion.div>

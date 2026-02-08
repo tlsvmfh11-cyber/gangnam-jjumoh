@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import type { Section as SectionType } from '../data/content';
+import { parseContentWithLinks } from '../utils/parseContent';
 
 interface SectionProps {
   section: SectionType;
@@ -89,7 +90,7 @@ export const Section = ({ section, index }: SectionProps) => {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * idx }}
             >
-              {paragraph}
+              {parseContentWithLinks(paragraph)}
             </motion.p>
           ))}
         </div>
@@ -117,7 +118,7 @@ export const Section = ({ section, index }: SectionProps) => {
                       key={paraIdx}
                       className="text-lg text-accent leading-relaxed"
                     >
-                      {para}
+                      {parseContentWithLinks(para)}
                     </p>
                   ))}
                 </div>
